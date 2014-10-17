@@ -1,0 +1,26 @@
+---
+driver:
+  name: vagrant
+  customize:
+    memory: 4048
+    cpus: 2
+
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: ubuntu-12.04
+  - name: centos-6.5
+
+
+
+suites:
+  - name: default
+    role_path: "/Users/srussell/Source/Awesome-Appliance-Repair/Hackdaylondon/Awesome-Appliance-Repair/Awesome-Appliance-Repair/roles"
+    run_list:
+      - role[mysql_server]
+      - role[httpd_server]
+      - role[ark]
+      - recipe[Awesome-Appliance-Repair::default]
+    attributes:

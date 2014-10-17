@@ -1,0 +1,10 @@
+source "https://supermarket.getchef.com"
+
+metadata
+
+group :integration do
+  cookbook "apache"
+  cookbook "mysql"
+  cookbook "ark"  # for remote files
+end
+
