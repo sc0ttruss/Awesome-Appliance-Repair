@@ -30,6 +30,14 @@ ark "Awesome-Appliance-Repair" do
  	action :create_if_missing
  end
 
+
+bash "install_AAR" do
+  code <<-EOL
+  unzip /master.zip -d /home/vagrant
+  mv /home/vagrant/Awesome-Appliance-Repair-master/AAR /var/www
+  EOL
+end
+
 #deploy "/var/www/AAR" do
 
 
